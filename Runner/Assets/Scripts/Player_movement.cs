@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Player_movement : MonoBehaviour
 {
     private CharacterController controller;
     private Vector3 direction;
     public float forwardSpeed;
-
-    private int currentLane = 1;
+    private int currentLane = 1; // 0 - left path, 1 - middle path, 2 - right path
     public float lineDistance = 4;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -49,7 +49,6 @@ public class Movement : MonoBehaviour
 
         transform.position = targetPosition;
     }
-
 
     private void FixedUpdate()
     {
